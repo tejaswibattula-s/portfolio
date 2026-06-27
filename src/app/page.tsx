@@ -7,6 +7,7 @@ import Achievement from "@/components/Achievement";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Timeline from "@/components/Timeline";
+import MarqueeSection from "@/components/MarqueeSection";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -23,6 +24,7 @@ export default function Home() {
       <Projects />
       <Skills />
       <Timeline />
+      <MarqueeSection />
       <Contact />
       <Footer />
     </main>

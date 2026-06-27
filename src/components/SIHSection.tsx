@@ -76,15 +76,15 @@ export default function SIHSection() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} id="sih-win" className="relative bg-[var(--bg)] h-screen overflow-hidden flex flex-col justify-center border-b border-[var(--surface-border)]">
+    <section ref={containerRef} id="sih-win" className="relative bg-[var(--bg)] h-screen overflow-hidden flex flex-col border-b border-[var(--surface-border)]">
       
       {/* Scroll Progress Bar */}
       <div className="absolute top-0 left-0 w-full h-1 bg-[var(--surface-border)] z-50">
         <div ref={progressRef} className="h-full bg-[var(--signal)] origin-left scale-x-0" />
       </div>
 
-      {/* Title Block - Fixed position inside the pinned container */}
-      <div className="absolute top-12 md:top-20 left-6 md:left-12 z-10 pointer-events-none">
+      {/* Title Block - Natural flow to prevent overlap */}
+      <div className="pt-12 md:pt-20 px-6 md:px-12 z-10 shrink-0">
         <p className="label-eyebrow mb-2">National Achievement</p>
         <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-[var(--ink)]">
           Smart India Hackathon 2025 <br className="hidden md:block" />
@@ -93,18 +93,19 @@ export default function SIHSection() {
       </div>
 
       {/* The massive horizontal track */}
-      <div ref={trackRef} className="flex flex-nowrap items-center w-max h-full pt-40 md:pt-48 px-6 md:px-12 pb-24 gap-12 md:gap-24">
+      <div className="flex-1 flex flex-col justify-center overflow-hidden">
+        <div ref={trackRef} className="flex flex-nowrap items-center w-max px-6 md:px-12 py-8 md:py-12 gap-8 md:gap-16">
         
         {/* Intro Card */}
-        <div className="w-[85vw] md:w-[500px] shrink-0 h-[400px] md:h-[500px] flex flex-col justify-center p-8 md:p-12 rounded-3xl border border-[var(--surface-border)] bg-[var(--bg-elevated)]/50 backdrop-blur-xl shadow-2xl relative overflow-hidden group">
+        <div className="w-[85vw] md:w-[450px] shrink-0 h-auto flex flex-col justify-center p-8 md:p-10 rounded-3xl border border-[var(--surface-border)] bg-[var(--bg-elevated)]/50 backdrop-blur-xl shadow-2xl relative overflow-hidden group">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--signal)] to-transparent opacity-50" />
-          <p className="text-xl md:text-2xl text-[var(--ink)] font-medium leading-relaxed mb-6">
+          <p className="text-lg md:text-xl text-[var(--ink)] font-medium leading-relaxed mb-4">
             Our team, <span className="text-[var(--signal)]">Eco-Grid Innovators</span>, emerged as Joint Winners in the highly competitive Hardware Edition of SIH 2025.
           </p>
-          <p className="text-[var(--ink-dim)] leading-relaxed">
+          <p className="text-[var(--ink-dim)] leading-relaxed text-sm md:text-base mb-8">
             We engineered a robust real-time hardware solution that was recognized by the Ministry of Education and AICTE, securing a prize of ₹75,000. This journey tested our limits in embedded systems and rapid prototyping.
           </p>
-          <div className="mt-auto flex items-center gap-4 text-[var(--muted)] font-mono-trace text-sm uppercase tracking-widest">
+          <div className="mt-auto flex items-center gap-4 text-[var(--muted)] font-mono-trace text-xs md:text-sm uppercase tracking-widest">
             <span>Scroll to explore</span>
             <span className="w-12 h-[1px] bg-[var(--surface-border)] relative overflow-hidden">
               <span className="absolute inset-0 bg-[var(--signal)] w-full animate-pulse" />
@@ -114,22 +115,15 @@ export default function SIHSection() {
 
         {/* Gallery Images */}
         {IMAGES.map((img, index) => (
-          <div key={index} className="w-[85vw] md:w-[60vw] max-w-[800px] shrink-0 flex flex-col gap-6">
-            <div className="relative w-full aspect-[16/10] rounded-3xl overflow-hidden border border-[var(--surface-border)] shadow-2xl bg-[#06120a] group">
+          <div key={index} className="h-[40vh] md:h-[50vh] min-h-[300px] max-h-[500px] aspect-[16/10] shrink-0 flex flex-col gap-6">
+            <div className="relative w-full h-full rounded-3xl overflow-hidden border border-[var(--surface-border)] shadow-2xl bg-[#06120a] group">
               
-              {/* Fallback Text if image isn't placed */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-[var(--muted)] z-0 p-8 text-center bg-[var(--bg-elevated)]">
-                <p className="font-mono-trace text-xs mb-2">IMAGE PLACEHOLDER</p>
-                <p className="text-sm">Please place <strong className="text-[var(--signal)]">{img.src}</strong> in your public folder.</p>
-              </div>
-
-              {/* Uncomment this when images are in public folder */}
-              {/* <Image 
+              <Image 
                 src={img.src} 
                 alt={img.alt} 
                 fill 
-                className="object-cover transition-transform duration-1000 group-hover:scale-105 z-10"
-              /> */}
+                className="object-cover object-top transition-transform duration-1000 group-hover:scale-105 z-10"
+              />
 
               {/* Number Badge */}
               <div className="absolute top-6 left-6 w-12 h-12 rounded-full bg-black/50 backdrop-blur-md border border-white/10 flex items-center justify-center font-mono-trace text-white text-sm z-20 shadow-xl">
@@ -157,6 +151,7 @@ export default function SIHSection() {
           <p className="text-[var(--ink-dim)]">Build for the World.</p>
         </div>
 
+      </div>
       </div>
     </section>
   );
