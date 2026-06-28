@@ -12,22 +12,22 @@ if (typeof window !== "undefined") {
 
 const IMAGES = [
   {
-    src: "/sih-1.jpg",
+    src: "/sih-1.png",
     alt: "SIH 2025 Grand Finale Joint Winner Cheque",
     caption: "Our team, Eco-Grid Innovators, proudly receiving the joint winner prize of ₹75,000 for our hardware solution.",
   },
   {
-    src: "/sih-2.jpg",
+    src: "/sih-2.png",
     alt: "Individual Winner Photo",
     caption: "Holding the winner's cheque and certificate at the grand finale. A defining moment in my hardware engineering journey.",
   },
   {
-    src: "/sih-3.jpg",
+    src: "/sih-3.png",
     alt: "SIH 2025 Badge and Hoodie",
     caption: "Representing SRKR Engineering College at the national level. The atmosphere at the grand finale was incredible.",
   },
   {
-    src: "/sih-4.jpg",
+    src: "/sih-4.png",
     alt: "Close up of the winning cheque",
     caption: "Hack for BHARAT, Build for the World. The official joint winner cheque presented by the Ministry of Education and AICTE.",
   },
