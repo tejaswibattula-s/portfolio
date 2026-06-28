@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Project } from "@/types";
 
 export default function ProjectCard({
@@ -29,6 +30,17 @@ export default function ProjectCard({
       <p className="mt-1 text-sm text-signal font-mono-trace">
         {project.subtitle}
       </p>
+
+      {project.image && (
+        <div className="mt-5 mb-2 relative aspect-video w-full rounded-md overflow-hidden border border-[var(--surface-border)] group-hover:border-[var(--signal-dim)] transition-colors">
+          <Image 
+            src={project.image} 
+            alt={project.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+          />
+        </div>
+      )}
 
       <p className="mt-4 text-[var(--ink-dim)] text-sm leading-relaxed">
         {project.description}

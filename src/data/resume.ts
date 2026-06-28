@@ -62,6 +62,7 @@ export const projects = [
       { value: "150+", label: "MW integrated" },
       { value: "±2%", label: "voltage deviation" },
     ],
+    image: "/projects/rooftop_solar.png",
   },
   {
     id: "der-monitoring",
@@ -77,6 +78,7 @@ export const projects = [
       "Real-time alerting for anomalous DER behavior",
     ],
     metrics: [{ value: "RBAC", label: "access control" }, { value: "Live", label: "alerting" }],
+    image: "/projects/der_monitoring.png",
   },
   {
     id: "adaptive-headlights",
@@ -91,6 +93,7 @@ export const projects = [
       "Improved night-driving visibility for drivers and pedestrians",
     ],
     metrics: [{ value: "PWM", label: "based control" }],
+    image: "/projects/adaptive_headlights.png",
   },
   {
     id: "laser-safety",
@@ -105,6 +108,7 @@ export const projects = [
       "Affordable, simple security layer for residential use",
     ],
     metrics: [{ value: "Low-cost", label: "hardware" }],
+    image: "/projects/laser_safety.png",
   },
 ];
 

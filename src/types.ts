@@ -7,4 +7,5 @@ export type Project = {
   description: string;
   bullets: string[];
   metrics: { value: string; label: string }[];
+  image?: string;
 };
